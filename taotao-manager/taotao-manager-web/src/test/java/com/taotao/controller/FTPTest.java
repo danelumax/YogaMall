@@ -37,7 +37,7 @@ public class FTPTest {
 	@Test
 	public void testFtpUtil() throws Exception {
 		FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\eliwech\\Desktop\\OS\\picture\\cloud.jpg"));
-		FtpUtil.uploadFile("192.168.182.130", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2017/01/12", "helloworld.jpg", inputStream);
+		FtpUtil.uploadFile("192.168.182.130", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2017/01/14", "helloworld.jpg", inputStream);
 		
 	}
 }
