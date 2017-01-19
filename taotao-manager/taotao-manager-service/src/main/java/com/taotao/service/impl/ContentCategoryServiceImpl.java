@@ -57,7 +57,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		contentCategory.setName(name);
 		contentCategory.setIsParent(false);
 		//'状态。可选值:1(正常),2(删除)',
-		contentCategory.setStatus(1);
+		contentCategory.setStatus( 1);
 		contentCategory.setParentId(parentId);
 		contentCategory.setSortOrder(1);
 		contentCategory.setCreated(new Date());
