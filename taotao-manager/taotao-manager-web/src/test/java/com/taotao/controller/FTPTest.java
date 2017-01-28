@@ -16,7 +16,7 @@ public class FTPTest {
 		//创建一个FtpClient对象
 		FTPClient ftpClient = new FTPClient();
 		//创建ftp连接。默认是21端口
-		ftpClient.connect("192.168.182.130", 21);
+		ftpClient.connect("192.168.182.131", 21);
 		//登录ftp服务器，使用用户名和密码
 		ftpClient.login("ftpuser", "ftpuser");
 		//上传文件。
@@ -37,7 +37,7 @@ public class FTPTest {
 	@Test
 	public void testFtpUtil() throws Exception {
 		FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\eliwech\\Desktop\\OS\\picture\\cloud.jpg"));
-		FtpUtil.uploadFile("192.168.182.130", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2017/01/14", "helloworld.jpg", inputStream);
+		FtpUtil.uploadFile("192.168.182.131", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2017/01/14", "helloworld.jpg", inputStream);
 		
 	}
 }
