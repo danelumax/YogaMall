@@ -1,12 +1,14 @@
 var TT = TAOTAO = {
 	checkLogin : function(){
-		var _ticket = $.cookie("TT_TOKEN");
+		var _ticket = $.cookie("TT_TOKEN"); //获取cookie中的token
 		if(!_ticket){
 			return ;
 		}
 		$.ajax({
-			url : "http://sso.taotao.com/user/token/" + _ticket,
-			dataType : "jsonp",
+			url : "http://localhost:8084/user/token/" + _ticket,
+			//会创建一个查询字符串参数 callback=? ，这个参数会加在请求的URL后面。
+			//服务器端应当在JSON数据前加上回调函数名，以便完成一个有效的JSONP请求
+			dataType : "jsonp", 
 			type : "GET",
 			success : function(data){
 				if(data.status == 200){

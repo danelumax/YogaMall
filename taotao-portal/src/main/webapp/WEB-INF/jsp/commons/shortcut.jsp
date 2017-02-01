@@ -5,6 +5,7 @@
 			<li class="fore1 ld" clstag="homepage|keycount|home2013|01a"><b></b><a href="javascript:addToFavorite()" rel="nofollow">收藏淘淘</a></li>
 		</ul>
 		<ul class="fr lh">
+		    <!-- 在base-v1.js文件中有 login 和 regist 函数-->
 			<li class="fore1" id="loginbar" clstag="homepage|keycount|home2013|01b">您好！欢迎来到淘淘！<a href="javascript:login()">[登录]</a>&nbsp;<a href="javascript:regist()">[免费注册]</a></li>
 			<li class="fore2 ld" clstag="homepage|keycount|home2013|01c">
 				<s></s>
