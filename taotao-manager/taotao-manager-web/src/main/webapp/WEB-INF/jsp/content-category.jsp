@@ -10,6 +10,7 @@
     <div data-options="iconCls:'icon-remove',name:'delete'">删除</div>
 </div>
 <script type="text/javascript">
+//页面初始化是，调用如下代码
 $(function(){
 	$("#contentCategory").tree({
 		url : '/content/category/list',

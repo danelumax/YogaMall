@@ -1171,6 +1171,7 @@ $.extend(jdModelCallCenter, {autoLocation: function(a) {
 //http://d.360buy.com/configs/get?type=JSON
 var category = {OBJ: $("#_JD_ALLSORT"),
 		//URL_Serv: "http://manage.taotao.com/web/itemcat/all?callback=category.getDataService",
+		//告知rest， 应该组装成category.getDataService(json)的格式
 		URL_Serv: "http://localhost:8081/rest/itemcat/list?callback=category.getDataService",
 		//URL_Serv: "http://rest.taotao.com/rest/itemcat/list?callback=category.getDataService",
 		//URL_Serv: "http://localhost:8082/category.json",
@@ -1205,6 +1206,7 @@ var category = {OBJ: $("#_JD_ALLSORT"),
         d.html(a), $.bigiframe(d)*/
     },FN_GetData: function() {
     	//使用jsonp来实现跨域请求
+    	//说白了，就是rest返回一个js代码，然后浏览器调用category.getDataService函数
         $.getJSONP(this.URL_Serv, category.getDataService);
     	//直接使用ajax请求json数据
 //    	$.getJSON(this.URL_Serv, function(json){
