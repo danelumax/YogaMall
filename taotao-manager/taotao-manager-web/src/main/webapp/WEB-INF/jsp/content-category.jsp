@@ -10,24 +10,26 @@
     <div data-options="iconCls:'icon-remove',name:'delete'">删除</div>
 </div>
 <script type="text/javascript">
-//页面初始化是，调用如下代码
+//页面初始化时，调用如下代码
 $(function(){
 	$("#contentCategory").tree({
 		url : '/content/category/list',
 		animate: true,
 		method : "GET",
+		//当右键点击节点时触发
 		onContextMenu: function(e,node){
-            e.preventDefault();
-            $(this).tree('select',node.target);
+            e.preventDefault();  //阻止默认的右键单击行为
+            $(this).tree('select',node.target);  //node.target 表示选中节点的DOM对象
             $('#contentCategoryMenu').menu('show',{
                 left: e.pageX,
                 top: e.pageY
             });
         },
+        //编辑节点后触发
         onAfterEdit : function(node){
-        	var _tree = $(this);
+        	var _tree = $(this); //this是触发这个事件的对象，也就是这个tree
         	if(node.id == 0){
-        		// 新增节点
+        		// 新增节点 Ajax请求
         		$.post("/content/category/create",{parentId:node.parentId,name:node.text},function(data){
         			if(data.status == 200){
         				_tree.tree("update",{
