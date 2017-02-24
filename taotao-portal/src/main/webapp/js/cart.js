@@ -8,6 +8,7 @@ var TTCart = {
 			_thisInput.val(eval(_thisInput.val()) + 1);
 			$.post("/cart/add/"+_thisInput.attr("itemId") + ".html?num=1",function(data){
 				TTCart.refreshTotalPrice();
+				TTCart.refreshTotalNum();
 			});
 		});
 		$(".decrement").click(function(){//-
@@ -18,16 +19,19 @@ var TTCart = {
 			_thisInput.val(eval(_thisInput.val()) - 1);
 			$.post("/cart/add/"+_thisInput.attr("itemId") + ".html?num=-1",function(data){
 				TTCart.refreshTotalPrice();
+				TTCart.refreshTotalNum();
 			});
 		});
 		$(".quantity-form .quantity-text").rnumber(1);//限制只能输入数字
 		$(".quantity-form .quantity-text").change(function(){
 			var _thisInput = $(this);
-			$.post("/service/cart/update/num/"+_thisInput.attr("itemId")+"/"+_thisInput.val(),function(data){
+			$.post("/cart/update/"+_thisInput.attr("itemId")+ ".html?num=" + _thisInput.val(),function(data){
 				TTCart.refreshTotalPrice();
+				TTCart.refreshTotalNum();
 			});
 		});
 	},
+	
 	refreshTotalPrice : function(){ //重新计算总价
 		var total = 0;
 		$(".quantity-form .quantity-text").each(function(i,e){
@@ -39,6 +43,15 @@ var TTCart = {
 			 thousandsSeparator: ',',
 			 centsLimit: 2
 		});
+	},
+	
+	refreshTotalNum : function(){ //重新计算总价
+		var totalNum = 0;
+		$(".quantity-form .quantity-text").each(function(i,e){
+			var _this = $(e);
+			totalNum += (eval(_this.val()));
+		});
+		$("#selectedCount").text(totalNum);
 	}
 };
 
