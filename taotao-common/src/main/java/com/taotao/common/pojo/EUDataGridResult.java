@@ -2,6 +2,7 @@ package com.taotao.common.pojo;
 
 import java.util.List;
 
+//用于分页处理，满足EasyUIDataGrid所需的数据格式
 public class EUDataGridResult {
 
 	private long total;

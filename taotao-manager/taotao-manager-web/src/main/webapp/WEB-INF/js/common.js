@@ -106,6 +106,7 @@ var TT = TAOTAO = {
     initItemCat : function(data){
     	$(".selectItemCat").each(function(i,e){
     		var _ele = $(e);
+    		//商品类目回显
     		if(data && data.cid){
     			_ele.after("<span style='margin-left:10px;'>"+data.cid+"</span>");
     		}else{
