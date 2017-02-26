@@ -95,11 +95,11 @@ public class ItemServiceImpl implements ItemService {
 		if (result.getStatus() != 200) {
 			throw new Exception();
 		}
-//		//添加规格参数
-//		result = insertItemParamItem(itemId, itemParam);
-//		if (result.getStatus() != 200) {
-//			throw new Exception();
-//		}
+		//添加规格参数
+		result = insertItemParamItem(itemId, itemParam);
+		if (result.getStatus() != 200) {
+			throw new Exception();
+		}
 		return TaotaoResult.ok();
 	}
 	/**

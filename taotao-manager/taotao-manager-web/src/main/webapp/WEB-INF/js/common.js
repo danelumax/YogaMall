@@ -20,7 +20,7 @@ Date.prototype.format = function(format){
 };
 
 var TT = TAOTAO = {
-	// 编辑器参数
+	// 编辑器参数， 在KindEditor官方文档中定义
 	kingEditorParams : {
 		//指定上传文件参数名称
 		filePostName  : "uploadFile",
@@ -83,7 +83,7 @@ var TT = TAOTAO = {
         	//给“上传图片按钮”绑定click事件
         	$(e).click(function(){
         		var form = $(this).parentsUntil("form").parent("form");
-        		//打开图片上传窗口
+        		//打开图片上传窗口, 富文本编辑器KindEditor
         		KindEditor.editor(TT.kingEditorParams).loadPlugin('multiimage',function(){
         			var editor = this;
         			editor.plugin.multiImageDialog({
