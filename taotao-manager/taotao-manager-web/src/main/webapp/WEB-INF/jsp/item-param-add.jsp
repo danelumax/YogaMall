@@ -24,12 +24,15 @@
 	</tr>
 </table>
 <div  class="itemParamAddTemplate" style="display: none;">
+	<!-- 组 -->
 	<li class="param">
 		<ul>
 			<li>
+				<!-- 组名 -->
 				<input class="easyui-textbox" style="width: 150px;" name="group"/>&nbsp;<a href="javascript:void(0)" class="easyui-linkbutton addParam"  title="添加参数" data-options="plain:true,iconCls:'icon-add'"></a>
 			</li>
 			<li>
+				<!-- 项 名-->
 				<span>|-------</span><input  style="width: 150px;" class="easyui-textbox" name="param"/>&nbsp;<a href="javascript:void(0)" class="easyui-linkbutton delParam" title="删除" data-options="plain:true,iconCls:'icon-cancel'"></a>						
 			</li>
 		</ul>
@@ -38,6 +41,7 @@
 <script style="text/javascript">
 	$(function(){
 		TAOTAO.initItemCat({
+			//node代表商品分类的tree，点击的节点
 			fun:function(node){
 			$(".addGroupTr").hide().find(".param").remove();
 				//  判断选择的类目是否已经添加过规格
@@ -53,10 +57,13 @@
 			}
 		});
 		
+		//添加分组
 		$(".addGroup").click(function(){
+			  //添加一个完整组
 			  var temple = $(".itemParamAddTemplate li").eq(0).clone();
 			  $(this).parent().parent().append(temple);
 			  temple.find(".addParam").click(function(){
+				  //添加一个项名
 				  var li = $(".itemParamAddTemplate li").eq(2).clone();
 				  li.find(".delParam").click(function(){
 					  $(this).parent().remove();
@@ -79,6 +86,7 @@
 				var p = $(e).parentsUntil("ul").parent().find("[name=param]");
 				var _ps = [];
 				p.each(function(_i,_e){
+					//匹配元素为input的每个元素的同胞
 					var _val = $(_e).siblings("input").val();
 					if($.trim(_val).length>0){
 						_ps.push(_val);						

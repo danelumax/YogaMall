@@ -64,7 +64,7 @@ public class ItemCatServiceImpl implements ItemCatService {
 				
 				resultList.add(catNode);
 				count ++;
-				//第一层只取14条记录
+				//第一层只取14条记录，只关系第一层
 				if (parentId == 0 && count >=14) {
 					break;
 				}

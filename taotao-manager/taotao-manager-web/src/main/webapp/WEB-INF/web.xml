@@ -5,6 +5,7 @@
 	id="taotao" version="2.5">
 	<display-name>taotao-manager</display-name>
 	<welcome-file-list>
+		<!-- 首页只要/,默认加载index页面 -->
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
