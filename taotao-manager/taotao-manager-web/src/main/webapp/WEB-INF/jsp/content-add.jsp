@@ -55,6 +55,7 @@
 	$(function(){
 		contentAddEditor = TT.createEditor("#contentAddForm [name=content]");
 		TT.initOnePicUpload();
+		//选择分类节点后再点击新增，会将categoryId，存入categoryId的hidden域中，提交时，一起提交
 		$("#contentAddForm [name=categoryId]").val($("#contentCategoryTree").tree("getSelected").id);
 	});
 	
